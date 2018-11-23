@@ -1,26 +1,5 @@
 'use strict';
 
-const fs = require('fs');
-
-process.stdin.resume();
-process.stdin.setEncoding('utf-8');
-
-let inputString = '';
-let currentLine = 0;
-
-process.stdin.on('data', inputStdin => {
-    inputString += inputStdin;
-});
-
-process.stdin.on('end', _ => {
-    inputString = inputString.trim().split('\n').map(str => str.trim());
-
-    main();
-});
-
-function readLine() {
-    return inputString[currentLine++];
-}
 
 /*
  * Complete the timeConversion function below.
@@ -52,7 +31,7 @@ function timeConversion(s) {
 
 function main() {
 
-let s ="02:05:45PM";
+    let s ="02:05:45PM";
     let result = timeConversion(s);
 
     console.log(result + "\n");
