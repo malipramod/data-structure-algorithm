@@ -1,8 +1,7 @@
 const MAXSIZE = 3;
 let stack = [];
 
-function _push(value) {
-    debugger;
+function _push(value) {    
     if (stack.length >= MAXSIZE)
         return "Stack is full";
     else
