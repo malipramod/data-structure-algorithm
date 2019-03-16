@@ -16,7 +16,7 @@ class SinglyLinkedList {
         if (index > 0 && index > this.getSize()) {
             console.log(`${index} is out of bound(${this.getSize()})`);
             return;
-        } else {            
+        } else {
             let node = new Node(item);
             //If insert at starting
             if (index == 0) {
@@ -76,38 +76,47 @@ class SinglyLinkedList {
     }
 
     removeatIndex(index) {
+        //If index is out of bound        
         if (index >= this.getSize() && index > 0) {
             console.log(`${index} is out of bound(${this.getSize()})`);
             return;
-        }else{
-            if(index ==0){
+        } else {
+            //If index is first position
+            if (index == 0) {
                 this.removeatStart();
-            }else{
-                let tempIndex=0;
+            } else {
+                let tempIndex = 0;
                 let currentNode = this.head;
-                let prevNode =this.head;
+                let prevNode = this.head;
+                //While tempIndex is less than index
                 while (tempIndex < index) {
                     tempIndex++;
                     prevNode = currentNode;
                     currentNode = currentNode.next;
                 }
+                //Update links
                 prevNode.next = currentNode.next;
             }
             this.size--;
         }
     }
 
-    removeElement(item){
-        if(this.getSize()<=0){
+    removeElement(item) {
+        //if there are no elements
+        if (this.getSize() <= 0) {
             return;
-        }else{
+        } else {
             let curretnNode = this.head;
             let prevNode = null;
+            //while current node is not null
             while (curretnNode != null) {
-                if(curretnNode.data == item){
-                    if(prevNode == null){
+                //If current item found
+                if (curretnNode.data == item) {
+                    //If it is at first position
+                    if (prevNode == null) {                        
                         this.head = curretnNode.next;
-                    }else{
+                    } else {
+                        //If it is not at first position
                         prevNode.next = curretnNode.next;
                     }
                 }
@@ -118,30 +127,30 @@ class SinglyLinkedList {
         }
     }
     removeatStart() {
+        //If there aren't any elements
         if (this.head == null) {
             console.log('Linked List is empty');
-            return;
+        }else{
+            //Remove first element
+            this.head = this.head.next;
+            this.size--;
         }
-        this.head = this.head.next;
-        this.size--;
     }
 
     removeatEnd() {
+        //If linkedlist is empty
         if (this.head == null) {
             console.log('Linked List is empty');
-            return;
+        }else{
+            //If not first element
+            let secondLast = this.head;
+            while (secondLast.next.next != null) {
+                secondLast = secondLast.next;
+            }
+            secondLast.next = null;
+    
+            this.size--;
         }
-
-        if (this.head.next == null)
-            this.head = null;
-
-        let secondLast = this.head;
-        while (secondLast.next.next != null) {
-            secondLast = secondLast.next;
-        }
-        secondLast.next = null;
-
-        this.size--;
     }
 
 
@@ -172,7 +181,7 @@ singlyLinkedList.printLinkedList();
 singlyLinkedList.removeatStart();
 singlyLinkedList.removeatEnd();
 singlyLinkedList.printLinkedList();
-singlyLinkedList.removeatIndex(4);
+singlyLinkedList.removeatIndex(1);
 singlyLinkedList.removeElement(10);
 
 singlyLinkedList.printLinkedList();
