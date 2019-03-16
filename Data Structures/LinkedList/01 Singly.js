@@ -113,7 +113,7 @@ class SinglyLinkedList {
                 //If current item found
                 if (curretnNode.data == item) {
                     //If it is at first position
-                    if (prevNode == null) {                        
+                    if (prevNode == null) {
                         this.head = curretnNode.next;
                     } else {
                         //If it is not at first position
@@ -130,7 +130,7 @@ class SinglyLinkedList {
         //If there aren't any elements
         if (this.head == null) {
             console.log('Linked List is empty');
-        }else{
+        } else {
             //Remove first element
             this.head = this.head.next;
             this.size--;
@@ -141,14 +141,14 @@ class SinglyLinkedList {
         //If linkedlist is empty
         if (this.head == null) {
             console.log('Linked List is empty');
-        }else{
+        } else {
             //If not first element
             let secondLast = this.head;
             while (secondLast.next.next != null) {
                 secondLast = secondLast.next;
             }
             secondLast.next = null;
-    
+
             this.size--;
         }
     }
