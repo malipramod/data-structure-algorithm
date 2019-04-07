@@ -33,8 +33,7 @@ class Trie {
     }
     /**
      * Inserts a new word in Dictionary
-     * @param {string} value 
-     * @param {TrieNode} root 
+     * @param {string} value Word to insert
      */
     insert(value) {
         let tempRoot = this.root;
@@ -52,8 +51,7 @@ class Trie {
 
     /**
      * Searches word in Dictionary
-     * @param {string} value 
-     * @param {TrieNode} root 
+     * @param {string} value Word to search
      */
     search(value) {
         let tempRoot = this.root;
