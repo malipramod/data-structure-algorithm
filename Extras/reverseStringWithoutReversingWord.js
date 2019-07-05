@@ -1,5 +1,5 @@
 //Reverse string without reversing individual words. i.e. Good Morning! Pramod => Pramod Morning! Good
-function reverseStringWithoutReversingWord(str) {
+function reverseStringWithoutReversingWords(str) {
     let outputString = '';
     for (let i = str.length - 1; i >= 0; i--) {
         if (str[i] === ' ' || i === 0) {
@@ -15,4 +15,4 @@ function reverseStringWithoutReversingWord(str) {
     return outputString;
 }
 
-console.log(reverseStringWithoutReversingWord('Good Morning! Pramod')); //Pramod Morning! Good
+console.log(reverseStringWithoutReversingWords('Good Morning! Pramod')); //Pramod Morning! Good
