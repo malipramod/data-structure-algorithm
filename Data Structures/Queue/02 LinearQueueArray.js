@@ -20,7 +20,10 @@ class LinearQueue {
       console.log('Queue is empty')
     }
     this.front++;
-    this.queue.splice(this.front, 1)
+    this.queue.splice(0, 1)
+
+    if (this.front == this.rear)
+      this.front = this.rear = -1
   }
 
   peek() {
@@ -60,7 +63,13 @@ lq.enQueue(50)
 lq.enQueue(60)
 lq.print()
 lq.deQueue()
+lq.deQueue()
+lq.deQueue()
+lq.deQueue()
+lq.deQueue()
 lq.print()
 lq.enQueue(60)
+lq.enQueue(70)
+lq.enQueue(80)
 console.log("Peek :: " + lq.peek())
 lq.print()
