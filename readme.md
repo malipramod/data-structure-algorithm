@@ -1,4 +1,4 @@
-# Data Structures and Algorithms(Javascript and C#)
+# Data Structures and Algorithms(Javascript)
 
    Data Structures and Algorithms
 
